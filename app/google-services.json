@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "235763929144",
-    "project_id": "get-rbx-counter-calc",
-    "storage_bucket": "get-rbx-counter-calc.firebasestorage.app"
+    "project_number": "857397576601",
+    "project_id": "ff-diamond-ee102",
+    "storage_bucket": "ff-diamond-ee102.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:235763929144:android:9f9b7f3b6174d9c9b996cd",
+        "mobilesdk_app_id": "1:857397576601:android:d39027a768fd792c6cc908",
         "android_client_info": {
           "package_name": "com.example.ffdiamond"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCDDNy6x98aOnE5e0zQpZaGGJ0msrhFqFM"
+          "current_key": "AIzaSyDrKon8OGzrizTsRUcRlubjaJswEmKmn8M"
         }
       ],
       "services": {
