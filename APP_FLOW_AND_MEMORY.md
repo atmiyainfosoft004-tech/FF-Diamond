@@ -269,3 +269,4 @@ graph TD
   - Ad placement restored to RBXCalculator positions on all funnel screens (Intro, Language, Gender, Age/pick, Game Mode, feature/pick-grid screens): native `ad_native` at the top under the title (elevated FrameLayout), banner `ad_banner` fixed at the bottom. Set Default: banner only at the bottom (unchanged, same as RBX).
   - Settings gear, SettingsActivity and all its resources removed. Home Play Game tiles split (row 3 left, row 4 right).
   - Every item (15 characters, 15 pets, 13 bundles, 15 weapons, 7 vehicles, 16 emotes, 8 parachutes) now has its own `ffart_*` drawing matching its name; no item shares art. Funnel picks, game modes, home tiles and intro use these too.
+  - Set as Default: only the image behind the selected FF Diamond card changed, to a transparent phone illustration (ic_default_phone). No dialog mockup, no extra hand; card, Continue, banner and grant flow unchanged.
