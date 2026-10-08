@@ -20,6 +20,20 @@
         android:text="@string/language_select_title"
         android:textAppearance="@style/TextAppearance.Ff.ScreenTitle" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:elevation="@dimen/_10sdp"
+        android:outlineProvider="bounds">
+
+        <include
+            android:id="@+id/ad_native"
+            layout="@layout/view_ad_slot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLanguages"
         android:layout_width="match_parent"
@@ -38,16 +52,9 @@
         android:text="@string/btn_next" />
 
     <include
-        android:id="@+id/ad_native"
-        layout="@layout/view_ad_slot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp" />
-
-    <include
         android:id="@+id/ad_banner"
         layout="@layout/view_ad_slot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_6sdp" />
+        android:layout_marginTop="@dimen/_5sdp" />
 </LinearLayout>

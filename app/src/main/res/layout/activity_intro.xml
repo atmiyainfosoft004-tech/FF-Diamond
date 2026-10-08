@@ -12,7 +12,23 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:elevation="@dimen/_10sdp"
+        android:outlineProvider="bounds">
+
+        <include
+            android:id="@+id/ad_native"
+            layout="@layout/view_ad_slot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_8sdp"
         android:layout_weight="1"
         android:background="@drawable/bg_intro_hero"
         android:minHeight="@dimen/_120sdp">
@@ -32,7 +48,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/_18sdp"
-        android:paddingTop="@dimen/_16sdp">
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_6sdp">
 
         <TextView
             android:id="@+id/txtTitle"
@@ -77,14 +94,6 @@
                 android:textAppearance="@style/TextAppearance.Ff.TextAction" />
         </LinearLayout>
     </LinearLayout>
-
-    <include
-        android:id="@+id/ad_native"
-        layout="@layout/view_ad_slot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_10sdp" />
 
     <include
         android:id="@+id/ad_banner"

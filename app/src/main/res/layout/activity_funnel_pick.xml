@@ -26,6 +26,20 @@
         android:textAppearance="@style/TextAppearance.Ff.Body"
         android:visibility="gone" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:elevation="@dimen/_10sdp"
+        android:outlineProvider="bounds">
+
+        <include
+            android:id="@+id/ad_native"
+            layout="@layout/view_ad_slot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -69,15 +83,9 @@
         android:text="@string/btn_next" />
 
     <include
-        android:id="@+id/ad_native"
-        layout="@layout/view_ad_slot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp" />
-
-    <include
         android:id="@+id/ad_banner"
         layout="@layout/view_ad_slot"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp" />
 </LinearLayout>
