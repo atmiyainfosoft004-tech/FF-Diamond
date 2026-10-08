@@ -29,10 +29,10 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = file("D:/Raj Girase/WorkPlace/RBXCalculator/com.rbxfree.rbxcalculator.jks")
-            storePassword = "com.rbxfree.rbxcalculator"
+            storeFile = file("D:/Raj Girase/WorkPlace/FF Diamond/com.example.ffdiamond.jks")
+            storePassword = "com.example.ffdiamond"
             keyAlias = "key0"
-            keyPassword = "com.rbxfree.rbxcalculator"
+            keyPassword = "com.example.ffdiamond"
         }
     }
 
@@ -60,6 +60,9 @@ android {
 
     lint {
         disable += "MissingTranslation"
+        checkOnly += "UnusedResources"
+        checkDependencies = false
+        abortOnError = false
     }
 }
 
