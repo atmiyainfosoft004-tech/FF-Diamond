@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Merged into DropActionBar, which is itself the horizontal LinearLayout holding these two targets.
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <TextView
+        android:id="@+id/drop_remove"
+        style="@style/Widget.Atmiya.DropTarget"
+        android:drawableTop="@drawable/ic_remove"
+        android:text="@string/drop_remove" />
+
+    <TextView
+        android:id="@+id/drop_uninstall"
+        style="@style/Widget.Atmiya.DropTarget"
+        android:drawableTop="@drawable/ic_uninstall"
+        android:text="@string/drop_uninstall" />
+
+</merge>

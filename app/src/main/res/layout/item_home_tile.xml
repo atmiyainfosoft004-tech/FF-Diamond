@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flTile"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_112sdp"
+    android:background="@drawable/bg_home_tile"
+    android:clickable="true"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/imgTile"
+        android:layout_width="@dimen/_92sdp"
+        android:layout_height="@dimen/_78sdp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/img_home_pets" />
+
+    <TextView
+        android:id="@+id/txtTile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:ellipsize="marquee"
+        android:gravity="end"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Ff.TileLabel"
+        tools:text="Pets" />
+
+    <TextView
+        android:id="@+id/txtAdBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:background="@drawable/bg_ad_badge"
+        android:paddingHorizontal="@dimen/_7sdp"
+        android:paddingVertical="@dimen/_2sdp"
+        android:text="@string/funnel_ad"
+        android:textColor="@color/ff_ad_badge"
+        android:textSize="@dimen/_8ssp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</FrameLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Merged into DrawerOverlay. The chrome (grid, dots, pill) is what slides with progress; the
+  scrim is drawn with it so the wallpaper darkens in lockstep. Search and the long-press popup
+  sit on top and are shown only while the drawer is settled open.
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <!-- Compositor wallpaper blur. Must sit behind the chrome and be a real view with a
+         BackgroundBlurDrawable background so SurfaceFlinger can sample the wallpaper layer. -->
+    <View
+        android:id="@+id/drawer_backdrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:importantForAccessibility="no" />
+
+    <com.example.ffdiamond.ui.drawer.DrawerChromeLayout
+        android:id="@+id/drawer_chrome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/drawer_overflow"
+            android:layout_width="@dimen/drawer_overflow"
+            android:layout_height="@dimen/drawer_overflow"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/drawer_overflow"
+            android:padding="12dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_more_vert" />
+
+        <com.example.ffdiamond.ui.workspace.Workspace
+            android:id="@+id/drawer_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.example.ffdiamond.ui.workspace.PageIndicatorView
+            android:id="@+id/drawer_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@+id/drawer_ad_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/drawer_search_pill"
+            android:layout_width="@dimen/drawer_search_pill_width"
+            android:layout_height="@dimen/drawer_search_pill_height"
+            android:background="@drawable/bg_search_pill"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="18dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_search" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/drawer_search_hint"
+                android:textColor="@color/search_pill_text"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </com.example.ffdiamond.ui.drawer.DrawerChromeLayout>
+
+    <com.example.ffdiamond.ui.drawer.SearchPanel
+        android:id="@+id/search_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:visibility="gone" />
+
+    <com.example.ffdiamond.ui.drawer.AppPopup
+        android:id="@+id/app_popup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</merge>

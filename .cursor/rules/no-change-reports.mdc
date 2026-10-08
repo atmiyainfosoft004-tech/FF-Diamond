@@ -1,0 +1,15 @@
+---
+description: Never report files changed; give the user-facing result only
+alwaysApply: true
+---
+
+# No change reports — hard rule
+
+The user has said this many times. Do not forget.
+
+Never in a user-facing message:
+- file names or paths
+- git/review diffs
+- lists of what was edited
+
+Reply with the on-screen result only. No recap of the work.

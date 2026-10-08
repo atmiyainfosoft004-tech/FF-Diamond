@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/funnel_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_screen"
+    android:clipChildren="true"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_14sdp"
+    android:paddingTop="@dimen/_14sdp"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <TextView
+        android:id="@+id/txtLanguageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/language_select_title"
+        android:textAppearance="@style/TextAppearance.Ff.ScreenTitle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLanguages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_weight="1"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:overScrollMode="never"
+        tools:listitem="@layout/item_funnel_language" />
+
+    <TextView
+        android:id="@+id/btnNext"
+        style="@style/Widget.Ff.PrimaryButton"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/btn_next" />
+
+    <include
+        android:id="@+id/ad_native"
+        layout="@layout/view_ad_slot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <include
+        android:id="@+id/ad_banner"
+        layout="@layout/view_ad_slot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp" />
+</LinearLayout>

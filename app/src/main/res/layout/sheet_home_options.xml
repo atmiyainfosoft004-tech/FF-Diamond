@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Second-level sheet. The same layout backs both "Themes" and "Home screen settings"; each entry
+  point hides the sections that do not belong to it.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/sheet_padding">
+
+    <View
+        android:layout_width="@dimen/sheet_handle_width"
+        android:layout_height="@dimen/sheet_handle_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_sm"
+        android:layout_marginBottom="@dimen/sheet_padding"
+        android:background="@drawable/bg_sheet_handle" />
+
+    <TextView
+        android:id="@+id/sheet_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/sheet_padding"
+        android:paddingBottom="@dimen/sheet_padding"
+        android:textAppearance="@style/TextAppearance.Atmiya.CardTitle" />
+
+    <LinearLayout
+        android:id="@+id/grid_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/sheet_padding">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/grid_size_title"
+            android:textAppearance="@style/TextAppearance.Atmiya.Body" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/grid_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            app:selectionRequired="true"
+            app:singleSelection="true" />
+
+    </LinearLayout>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch_icon_labels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sheet_padding"
+        android:minHeight="@dimen/sheet_row_height"
+        android:paddingHorizontal="@dimen/sheet_padding"
+        android:text="@string/icon_labels_title"
+        android:textAppearance="@style/TextAppearance.Atmiya.CardTitle" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch_themed_icons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/sheet_row_height"
+        android:paddingHorizontal="@dimen/sheet_padding"
+        android:text="@string/themed_icons_title"
+        android:textAppearance="@style/TextAppearance.Atmiya.CardTitle" />
+
+    <TextView
+        android:id="@+id/option_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/sheet_padding"
+        android:textAppearance="@style/TextAppearance.Atmiya.Body"
+        android:textSize="13sp" />
+
+</LinearLayout>

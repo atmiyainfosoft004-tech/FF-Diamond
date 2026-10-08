@@ -1,0 +1,16 @@
+---
+description: Never change ads or other app flows; UI-only unless user explicitly asks
+alwaysApply: true
+---
+
+# Locked flows — FF Diamond
+
+The user will change functionality later. Until they explicitly name a flow to change:
+
+- Do not change ads flow at all: AdsGate, AdsBinder, AdsSdk, AdsRepository, InstallSource, web/interstitial/app-open counts, banner/native bind, goNext/onBack ad gates, afterDefault interstitial.
+- Do not change other flows: FunnelStep names, FunnelNav destinations except Intro after Set Default, organic vs paid, Splash routing, Set Default → afterDefault ads → Intro → Language, Language → DiamondHome (organic) or the paid funnel. Paid order after Language: Gender → Age → Favorite Character → Favorite Pet → Game Mode → Favorite Weapon → Favorite Vehicle → Favorite Bundle → Favorite Emote → Get Started.
+- Do not add/remove/reorder funnel steps. Extra onboarding UIs must map onto existing steps.
+- Keep ads/flow view IDs: `funnel_root`, `ad_native`, `ad_banner`, `default_continue`, `default_continue_hand`.
+- UI, colors, layouts, and copy may change. Flow and ads must stay identical.
+
+Do not reply with file lists or git-style change reports. Give the user-facing result only.

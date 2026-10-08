@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"
+    android:interpolator="@android:interpolator/fast_out_slow_in"
+    android:shareInterpolator="true">
+    <translate
+        android:duration="260"
+        android:fromXDelta="-7"
+        android:fromYDelta="10"
+        android:toXDelta="1"
+        android:toYDelta="-1" />
+    <scale
+        android:duration="260"
+        android:fromXScale="1"
+        android:fromYScale="1"
+        android:pivotX="82%"
+        android:pivotY="12%"
+        android:toXScale="0.86"
+        android:toYScale="0.86" />
+</set>

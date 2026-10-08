@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Merged into FolderPanel, a full-screen FrameLayout inside the drag layer. The snapshot sits at the
+  bottom because it stands in for the blurred workspace on devices without RenderEffect.
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <ImageView
+        android:id="@+id/folder_blur_snapshot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/folder_scrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/folder_scrim" />
+
+    <LinearLayout
+        android:id="@+id/folder_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/folder_panel_margin"
+        android:layout_marginEnd="@dimen/folder_panel_margin"
+        android:background="@drawable/bg_folder_panel"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/folder_panel_padding"
+        android:paddingBottom="@dimen/folder_panel_padding">
+
+        <EditText
+            android:id="@+id/folder_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="@string/folder_default_title"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:paddingStart="@dimen/folder_title_padding"
+            android:paddingEnd="@dimen/folder_title_padding"
+            android:paddingBottom="@dimen/folder_title_padding"
+            android:textColor="@color/on_dark"
+            android:textColorHint="@color/hint_text"
+            android:textSize="@dimen/folder_title_size"
+            android:textStyle="bold" />
+
+        <com.example.ffdiamond.ui.workspace.Workspace
+            android:id="@+id/folder_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <com.example.ffdiamond.ui.workspace.PageIndicatorView
+            android:id="@+id/folder_pages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm" />
+
+        <TextView
+            android:id="@+id/folder_add_apps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_sm"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:drawableStart="@drawable/ic_add_apps"
+            android:drawablePadding="@dimen/space_sm"
+            android:drawableTint="@color/on_dark"
+            android:padding="@dimen/space_sm"
+            android:text="@string/folder_add_apps"
+            android:textColor="@color/on_dark"
+            android:textSize="@dimen/chip_text_size" />
+
+    </LinearLayout>
+
+</merge>

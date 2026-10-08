@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="176dp"
+    android:height="190dp"
+    android:viewportWidth="240"
+    android:viewportHeight="260">
+
+    <!-- Phone body -->
+    <path
+        android:fillColor="#14FFFFFF"
+        android:pathData="M54,4 H186 A26,26 0 0 1 212,30 V230 A26,26 0 0 1 186,256 H54 A26,26 0 0 1 28,230 V30 A26,26 0 0 1 54,4 Z"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="2" />
+
+    <!-- Search pill -->
+    <path
+        android:fillColor="#26FFFFFF"
+        android:pathData="M63,32 H177 A11,11 0 0 1 188,43 A11,11 0 0 1 177,54 H63 A11,11 0 0 1 52,43 A11,11 0 0 1 63,32 Z" />
+
+    <!-- App grid, row 1 -->
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M62,74 H92 A10,10 0 0 1 102,84 V114 A10,10 0 0 1 92,124 H62 A10,10 0 0 1 52,114 V84 A10,10 0 0 1 62,74 Z" />
+    <path
+        android:fillColor="#7BA7FF"
+        android:pathData="M115,74 H145 A10,10 0 0 1 155,84 V114 A10,10 0 0 1 145,124 H115 A10,10 0 0 1 105,114 V84 A10,10 0 0 1 115,74 Z" />
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M168,74 H198 A10,10 0 0 1 208,84 V114 A10,10 0 0 1 198,124 H168 A10,10 0 0 1 158,114 V84 A10,10 0 0 1 168,74 Z" />
+
+    <!-- App grid, row 2 -->
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M62,136 H92 A10,10 0 0 1 102,146 V176 A10,10 0 0 1 92,186 H62 A10,10 0 0 1 52,176 V146 A10,10 0 0 1 62,136 Z" />
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M115,136 H145 A10,10 0 0 1 155,146 V176 A10,10 0 0 1 145,186 H115 A10,10 0 0 1 105,176 V146 A10,10 0 0 1 115,136 Z" />
+    <path
+        android:fillColor="#4D7BA7FF"
+        android:pathData="M168,136 H198 A10,10 0 0 1 208,146 V176 A10,10 0 0 1 198,186 H168 A10,10 0 0 1 158,176 V146 A10,10 0 0 1 168,136 Z" />
+
+    <!-- Page indicator -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M108,200 H124 A3,3 0 0 1 127,203 A3,3 0 0 1 124,206 H108 A3,3 0 0 1 105,203 A3,3 0 0 1 108,200 Z" />
+    <path
+        android:fillColor="#66FFFFFF"
+        android:pathData="M136,200 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" />
+
+    <!-- Dock -->
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M62,220 H86 A8,8 0 0 1 94,228 V244 A8,8 0 0 1 86,252 H62 A8,8 0 0 1 54,244 V228 A8,8 0 0 1 62,220 Z" />
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M108,220 H132 A8,8 0 0 1 140,228 V244 A8,8 0 0 1 132,252 H108 A8,8 0 0 1 100,244 V228 A8,8 0 0 1 108,220 Z" />
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M154,220 H178 A8,8 0 0 1 186,228 V244 A8,8 0 0 1 178,252 H154 A8,8 0 0 1 146,244 V228 A8,8 0 0 1 154,220 Z" />
+</vector>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path
+        android:fillColor="#40000000"
+        android:pathData="M16,94 a34,3 0 1 0 68,0 a34,3 0 1 0 -68,0z" />
+    <path
+        android:fillColor="#FF1E88E5"
+        android:pathData="M8,62 Q30,56 50,64 L50,92 Q30,84 8,90 Z" />
+    <path
+        android:fillColor="#FF1565C0"
+        android:pathData="M92,62 Q70,56 50,64 L50,92 Q70,84 92,90 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,58 Q31,52 49,60 L49,86 Q31,80 12,84 Z" />
+    <path
+        android:fillColor="#FFE3F2FD"
+        android:pathData="M88,58 Q69,52 51,60 L51,86 Q69,80 88,84 Z" />
+    <path
+        android:strokeColor="#FF90CAF9"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M18,63 Q31,59 44,64 M18,69 Q31,65 44,70 M18,75 Q31,71 44,76 M56,64 Q69,59 82,63 M56,70 Q69,65 82,69" />
+    <path
+        android:fillColor="#FFFFD54F"
+        android:pathData="M50,8 a16,16 0 0 1 10,28.5 v6 h-20 v-6 a16,16 0 0 1 10,-28.5z" />
+    <path
+        android:fillColor="#FFFFF8E1"
+        android:pathData="M44,14 a12,12 0 0 0 -4,16 l3,0 a10,10 0 0 1 4,-15z" />
+    <path
+        android:fillColor="#FF90A4AE"
+        android:pathData="M41,42 h18 a1,1 0 0 1 1,1 v2 a1,1 0 0 1 -1,1 h-18 a1,1 0 0 1 -1,-1 v-2 a1,1 0 0 1 1,-1z M42,47 h16 a1,1 0 0 1 1,1 v2 a1,1 0 0 1 -1,1 h-16 a1,1 0 0 1 -1,-1 v-2 a1,1 0 0 1 1,-1z" />
+    <path
+        android:fillColor="#FF607D8B"
+        android:pathData="M45.5,52 h9.0 a1.5,1.5 0 0 1 1.5,1.5 v0.0 a1.5,1.5 0 0 1 -1.5,1.5 h-9.0 a1.5,1.5 0 0 1 -1.5,-1.5 v-0.0 a1.5,1.5 0 0 1 1.5,-1.5z" />
+    <path
+        android:strokeColor="#FFFFB300"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M50,0.5 L50,4 M28,8 L31,11 M72,8 L69,11 M22,24 L27,24 M78,24 L73,24" />
+</vector>

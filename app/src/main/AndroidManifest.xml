@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Left-of-home Google Discover/News panel. The launcher itself still makes no API calls. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
+    <!-- Runtime notification permission (API 33+). Asked on the Gender funnel screen. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+
+    <!-- Lets PackageInstaller.uninstall() put up the system confirmation sheet. -->
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
+    <!--
+      Declared so the app is listed in Settings > Special access > Usage data access.
+      It is granted by the user in Settings, never by a runtime prompt, and is only used
+      for app suggestions. Skipping it degrades that one feature.
+    -->
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!--
+      Package visibility. Without this the launcher sees an empty app list on Android 11+.
+      The LAUNCHER block is the app list itself; the HOME block lets us resolve which app is
+      currently the default home so onboarding can show live "Currently default: yes/no".
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HOME" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data
+                android:host="details"
+                android:scheme="market" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="http" />
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+        <!-- Without this, ACTION_DELETE cannot be resolved on Android 11+ and Uninstall is a no-op. -->
+        <intent>
+            <action android:name="android.intent.action.DELETE" />
+            <data android:scheme="package" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.UNINSTALL_PACKAGE" />
+            <data android:scheme="package" />
+        </intent>
+
+        <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+
+        <package android:name="com.android.vending" />
+        <package android:name="com.google.android.googlequicksearchbox" />
+        <package android:name="com.android.chrome" />
+        <package android:name="com.google.android.apps.chrome" />
+        <package android:name="com.chrome.beta" />
+        <package android:name="com.chrome.dev" />
+        <package android:name="com.brave.browser" />
+
+        <intent>
+            <action android:name="android.speech.action.WEB_SEARCH" />
+        </intent>
+        <intent>
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+        </intent>
+        <intent>
+            <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+
+
+    <application
+        android:name=".LauncherApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AtmiyaLauncher.Funnel"
+        android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.NATIVE_AD_DEBUGGER_ENABLED"
+            android:value="false" />
+
+        <!-- App ID comes from the server config. Init is delayed until that value arrives. -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
+        <meta-data
+            android:name="com.facebook.sdk.AutoInitEnabled"
+            android:value="false" />
+        <meta-data
+            android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+            android:value="true" />
+        <meta-data
+            android:name="com.facebook.sdk.AdvertiserIDCollectionEnabled"
+            android:value="true" />
+
+        <provider
+            android:name="com.facebook.internal.FacebookInitProvider"
+            android:authorities="${applicationId}.FacebookInitProvider"
+            tools:node="remove" />
+
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
+
+        <activity
+            android:name=".funnel.SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".funnel.IntroActivity"
+            android:exported="false"
+            android:label="@string/ff_intro_screen"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.IntroSecondActivity"
+            android:exported="false"
+            android:label="@string/ff_intro_screen"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.IntroThirdActivity"
+            android:exported="false"
+            android:label="@string/ff_intro_screen"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.IntroFourthActivity"
+            android:exported="false"
+            android:label="@string/ff_intro_screen"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.SetDefaultActivity"
+            android:exported="false"
+            android:label="@string/funnel_default_title"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.DiamondHomeActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+
+        <activity
+            android:name=".funnel.LetsStartActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+
+        <activity
+            android:name=".funnel.FunnelActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.HomeGuideActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.example.ffdiamond.homeguide"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.FunnelGuide" />
+        <activity
+            android:name=".funnel.LanguageActivity"
+            android:exported="false"
+            android:label="@string/language_select_title"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.GenderActivity"
+            android:exported="false"
+            android:label="@string/ff_gender_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.AgeActivity"
+            android:exported="false"
+            android:label="@string/ff_age_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.FavoriteCharacterActivity"
+            android:exported="false"
+            android:label="@string/ff_character_pick_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.FavoritePetActivity"
+            android:exported="false"
+            android:label="@string/ff_pet_pick_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.GameModeActivity"
+            android:exported="false"
+            android:label="@string/ff_mode_pick_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.FavoriteWeaponActivity"
+            android:exported="false"
+            android:label="@string/ff_weapon_pick_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.FavoriteVehicleActivity"
+            android:exported="false"
+            android:label="@string/ff_vehicle_pick_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.FavoriteBundleActivity"
+            android:exported="false"
+            android:label="@string/ff_bundle_pick_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.FavoriteEmoteActivity"
+            android:exported="false"
+            android:label="@string/ff_emote_pick_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".funnel.GetStartedActivity"
+            android:exported="false"
+            android:label="@string/ff_start_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+
+        <activity
+            android:name=".guide.CharactersActivity"
+            android:exported="false"
+            android:label="@string/ff_characters"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.PetsActivity"
+            android:exported="false"
+            android:label="@string/ff_pets"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.BundlesActivity"
+            android:exported="false"
+            android:label="@string/ff_bundles"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.WeaponsActivity"
+            android:exported="false"
+            android:label="@string/ff_weapons"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.VehiclesActivity"
+            android:exported="false"
+            android:label="@string/ff_vehicles"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.EmotesActivity"
+            android:exported="false"
+            android:label="@string/ff_emotes"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.ParachutesActivity"
+            android:exported="false"
+            android:label="@string/ff_parachutes"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.TipsTricksActivity"
+            android:exported="false"
+            android:label="@string/ff_tips_tricks"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.TipDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.ItemDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+        <activity
+            android:name=".guide.DiamondCalculatorActivity"
+            android:exported="false"
+            android:label="@string/ff_calculator"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".guide.SettingsActivity"
+            android:exported="false"
+            android:label="@string/ff_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
+
+        <!-- Opens when the user taps the app icon: onboarding wizard, then the status screen. -->
+        <activity
+            android:name=".onboarding.OnboardingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AtmiyaLauncher.Onboarding"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!--
+          The home screen itself. Never shows onboarding, never finishes.
+
+          screenOrientation is "nosensor" rather than "portrait": the grid is designed as a single
+          portrait frame and a landscape home screen is a different layout, not the same one
+          rotated, but a tablet's natural orientation is landscape and hard-coding portrait would
+          fight it.
+        -->
+        <activity
+            android:name=".LauncherActivity"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|navigation|uiMode|density"
+            android:enabled="true"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.AtmiyaLauncher.Home"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!--
+          Stub listener declared in Phase 1 so the app appears in
+          Settings > Notification access and the toggle is actually grantable.
+          Badge counting is wired up in a later phase.
+        -->
+        <service
+            android:name=".service.BadgeNotificationListenerService"
+            android:exported="false"
+            android:label="@string/notification_badges_title"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".widget.SearchWidgetClickReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".widget.SearchWidgetProvider"
+            android:exported="true"
+            android:label="@string/search_widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/search_widget_info" />
+        </receiver>
+
+
+    </application>
+
+</manifest>

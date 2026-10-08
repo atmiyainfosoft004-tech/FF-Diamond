@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_50sdp"
+    android:background="@drawable/bg_funnel_ad">
+
+    <ImageView
+        android:id="@+id/custom_banner_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/funnel_ad"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:background="@drawable/bg_ad_badge"
+        android:paddingHorizontal="@dimen/_7sdp"
+        android:paddingVertical="@dimen/_2sdp"
+        android:text="@string/funnel_ad"
+        android:textColor="@color/ff_ad_badge"
+        android:textSize="@dimen/_8ssp"
+        android:textStyle="bold" />
+</FrameLayout>

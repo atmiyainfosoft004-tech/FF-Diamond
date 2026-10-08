@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/funnel_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_screen"
+    android:clipChildren="true"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_14sdp"
+    android:paddingTop="@dimen/_14sdp"
+    android:paddingBottom="@dimen/_12sdp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ff_mode_pick_title"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Ff.ScreenTitle" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_weight="1"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <GridLayout
+                android:id="@+id/interest_chips_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:useDefaultMargins="false" />
+
+            <GridLayout
+                android:id="@+id/interest_chips_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:columnCount="2"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/interest_next"
+        style="@style/Widget.Ff.PrimaryButton"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/btn_next" />
+
+    <include
+        android:id="@+id/ad_native"
+        layout="@layout/view_ad_slot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp" />
+
+    <include
+        android:id="@+id/ad_banner"
+        layout="@layout/view_ad_slot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One tappable row in a home-screen bottom sheet: icon, title, supporting line. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/sheet_row_height"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/sheet_padding"
+    android:paddingVertical="@dimen/space_sm">
+
+    <ImageView
+        android:id="@+id/sheet_row_icon"
+        android:layout_width="@dimen/sheet_row_icon"
+        android:layout_height="@dimen/sheet_row_icon"
+        android:importantForAccessibility="no"
+        app:tint="@color/on_dark" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sheet_padding"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/sheet_row_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Atmiya.CardTitle" />
+
+        <TextView
+            android:id="@+id/sheet_row_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Atmiya.Body"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

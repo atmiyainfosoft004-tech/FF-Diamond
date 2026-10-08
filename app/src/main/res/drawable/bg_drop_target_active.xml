@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shown while the drag is over this target, so releasing is never a guess. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/drop_bar_fill_active" />
+    <corners android:radius="@dimen/drop_bar_corner" />
+</shape>

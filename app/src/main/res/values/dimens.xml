@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Design tokens from design/design-tokens.json, measured against a 360 x 840 dp base frame.
+      Later phases treat these as ratios of that baseline rather than absolute values, so a
+      matching set of ratio constants lives in code as well.
+    -->
+
+    <!-- Grid -->
+    <dimen name="grid_side_padding">13.5dp</dimen>
+    <dimen name="grid_column_width">83.25dp</dimen>
+    <dimen name="grid_row_spacing">94dp</dimen>
+
+    <!-- Icon -->
+    <dimen name="icon_size">56dp</dimen>
+    <dimen name="icon_corner_radius">15.7dp</dimen>
+    <dimen name="icon_glyph_size">26dp</dimen>
+    <dimen name="icon_card_size">40dp</dimen>
+
+    <!-- Label -->
+    <dimen name="label_text_size">12sp</dimen>
+    <dimen name="label_baseline_from_icon_bottom">14dp</dimen>
+
+    <!-- Cards and chips -->
+    <dimen name="card_side_margin">10dp</dimen>
+    <dimen name="card_corner_radius">20dp</dimen>
+    <dimen name="card_stroke_width">1dp</dimen>
+    <dimen name="card_title_size">16sp</dimen>
+    <dimen name="card_padding">20dp</dimen>
+    <dimen name="chip_height">36dp</dimen>
+    <dimen name="chip_corner_radius">18dp</dimen>
+    <dimen name="chip_text_size">13sp</dimen>
+
+    <!-- Home screen sheets and the page -1 panel -->
+    <dimen name="space_sm">8dp</dimen>
+    <dimen name="feed_padding_horizontal">24dp</dimen>
+    <dimen name="sheet_padding">20dp</dimen>
+    <dimen name="sheet_row_height">64dp</dimen>
+    <dimen name="sheet_row_icon">24dp</dimen>
+    <dimen name="sheet_handle_width">32dp</dimen>
+    <dimen name="sheet_handle_height">4dp</dimen>
+    <dimen name="grid_option_height">44dp</dimen>
+
+    <!-- Drag and drop -->
+    <dimen name="drag_elevation">12dp</dimen>
+    <dimen name="drop_bar_height">88dp</dimen>
+    <dimen name="drop_bar_target_padding">12dp</dimen>
+    <dimen name="drop_bar_icon">24dp</dimen>
+    <dimen name="drop_bar_text_size">12sp</dimen>
+    <dimen name="drop_bar_corner">22dp</dimen>
+
+    <!-- Drawer and search -->
+    <dimen name="drawer_search_pill_width">216dp</dimen>
+    <dimen name="drawer_search_pill_height">44dp</dimen>
+    <dimen name="drawer_search_pill_radius">22dp</dimen>
+    <dimen name="drawer_search_field_height">41dp</dimen>
+    <dimen name="drawer_overflow">48dp</dimen>
+    <dimen name="search_card_icon">64dp</dimen>
+    <dimen name="search_shortcut_icon">26dp</dimen>
+    <dimen name="popup_corner">18dp</dimen>
+    <dimen name="popup_row_height">48dp</dimen>
+    <dimen name="popup_min_width">200dp</dimen>
+    <dimen name="blur_radius">40dp</dimen>
+
+    <!-- Folder -->
+    <dimen name="folder_panel_margin">28dp</dimen>
+    <dimen name="folder_panel_padding">16dp</dimen>
+    <dimen name="folder_panel_corner">28dp</dimen>
+    <dimen name="folder_title_size">18sp</dimen>
+    <dimen name="folder_title_padding">12dp</dimen>
+
+    <!-- Onboarding chrome -->
+    <dimen name="onboarding_page_padding">24dp</dimen>
+    <dimen name="onboarding_button_height">52dp</dimen>
+    <dimen name="onboarding_button_corner">26dp</dimen>
+    <dimen name="onboarding_title_size">26sp</dimen>
+    <dimen name="onboarding_body_size">15sp</dimen>
+
+    <dimen name="search_widget_height">52dp</dimen>
+
+    <!-- Change this once — Next, Done, Convert, Count, and Native Ad CTAs all follow it. -->
+    <dimen name="ff_button_height">@dimen/_44sdp</dimen>
+</resources>

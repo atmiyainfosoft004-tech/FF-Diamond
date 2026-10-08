@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Four squircle-ish cells: the launcher's own mark, drawn inside the 72dp safe zone. -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M35,28 H43 A7,7 0 0 1 50,35 V43 A7,7 0 0 1 43,50 H35 A7,7 0 0 1 28,43 V35 A7,7 0 0 1 35,28 Z" />
+    <path
+        android:fillColor="#7BA7FF"
+        android:pathData="M65,28 H73 A7,7 0 0 1 80,35 V43 A7,7 0 0 1 73,50 H65 A7,7 0 0 1 58,43 V35 A7,7 0 0 1 65,28 Z" />
+    <path
+        android:fillColor="#7BA7FF"
+        android:pathData="M35,58 H43 A7,7 0 0 1 50,65 V73 A7,7 0 0 1 43,80 H35 A7,7 0 0 1 28,73 V65 A7,7 0 0 1 35,58 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M65,58 H73 A7,7 0 0 1 80,65 V73 A7,7 0 0 1 73,80 H65 A7,7 0 0 1 58,73 V65 A7,7 0 0 1 65,58 Z" />
+</vector>

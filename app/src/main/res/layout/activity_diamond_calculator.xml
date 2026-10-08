@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llCalculatorRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_screen"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingBottom="@dimen/_8sdp">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/view_screen_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_16sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_calc_panel"
+                android:orientation="vertical"
+                android:padding="@dimen/_14sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_ff_diamond_small" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/ff_calc_label"
+                        android:textAppearance="@style/TextAppearance.Ff.Body"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edtDiamonds"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_44sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:autofillHints="@null"
+                    android:background="@drawable/bg_input_outline"
+                    android:hint="@string/ff_calc_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:paddingHorizontal="@dimen/_14sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/ff_text_muted"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:id="@+id/btnCountNow"
+                    android:layout_width="@dimen/_170sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:background="@drawable/bg_count_button"
+                    android:gravity="center"
+                    android:text="@string/ff_count_now"
+                    android:textAppearance="@style/TextAppearance.Ff.Button" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:text="@string/ff_calc_cost_label"
+                android:textAppearance="@style/TextAppearance.Ff.Body" />
+
+            <TextView
+                android:id="@+id/txtCostResult"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_46sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_result_pill"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center"
+                android:text="@string/ff_calc_note"
+                android:textAppearance="@style/TextAppearance.Ff.Body"
+                android:textSize="@dimen/_10ssp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/adBanner"
+        layout="@layout/view_ad_slot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp" />
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/svDetail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="ifContentScrolls"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <LinearLayout
+            android:id="@+id/llHero"
+            android:layout_width="@dimen/_192sdp"
+            android:layout_height="@dimen/_192sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/bg_detail_hero"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/_12sdp">
+
+            <ImageView
+                android:id="@+id/imgDetail"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                tools:src="@drawable/ff_char_alok" />
+
+            <TextView
+                android:id="@+id/txtDetailName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.Ff.CardLabel"
+                android:textSize="@dimen/_15ssp"
+                tools:text="ALOK" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:background="@drawable/bg_detail_card"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:paddingVertical="@dimen/_16sdp">
+
+            <TextView
+                android:id="@+id/txtHeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.Ff.DetailBody"
+                tools:text="Ability: Drop the Beat (Active)" />
+
+            <TextView
+                android:id="@+id/txtSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.Ff.DetailBody"
+                tools:text="Creates a 5m aura that boosts movement speed." />
+
+            <TextView
+                android:id="@+id/txtDescriptionLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:gravity="center"
+                android:text="@string/ff_description_label"
+                android:textAppearance="@style/TextAppearance.Ff.DetailBody" />
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.Ff.DetailBody"
+                tools:text="Alok is one of the most picked characters." />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

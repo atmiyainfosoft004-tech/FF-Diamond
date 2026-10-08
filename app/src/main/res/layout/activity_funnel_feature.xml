@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/funnel_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_screen"
+    android:clipChildren="true"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_14sdp"
+    android:paddingTop="@dimen/_14sdp"
+    android:paddingBottom="@dimen/_12sdp">
+
+    <TextView
+        android:id="@+id/feature_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Ff.ScreenTitle" />
+
+    <TextView
+        android:id="@+id/feature_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:text="@string/funnel_feature_body"
+        android:textAppearance="@style/TextAppearance.Ff.Body"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_weight="1"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/feature_center_top"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/feature_hero"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="@dimen/_180sdp"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/feature_hero_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.Ff.ScreenTitle"
+                android:visibility="gone" />
+
+            <GridLayout
+                android:id="@+id/feature_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:columnCount="2"
+                android:useDefaultMargins="false"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/feature_center_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/feature_cta"
+        style="@style/Widget.Ff.PrimaryButton"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/btn_next"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/feature_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Ff.Body"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/ad_native"
+        layout="@layout/view_ad_slot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp" />
+
+    <include
+        android:id="@+id/ad_banner"
+        layout="@layout/view_ad_slot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

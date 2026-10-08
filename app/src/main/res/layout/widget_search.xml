@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/search_widget_pill"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_widget_height"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_search_widget"
+        android:clickable="true"
+        android:elevation="2dp"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp">
+
+        <ImageView
+            android:id="@+id/search_widget_logo"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:clickable="false"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_google_g" />
+
+        <TextView
+            android:id="@+id/search_widget_hint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/search_widget_hint"
+            android:textColor="@color/search_pill_text"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/search_widget_mic"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:contentDescription="@string/search_widget_mic"
+            android:src="@drawable/ic_google_mic" />
+
+        <ImageView
+            android:id="@+id/search_widget_lens"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="10dp"
+            android:clickable="true"
+            android:contentDescription="@string/search_widget_lens"
+            android:src="@drawable/ic_google_lens" />
+    </LinearLayout>
+</FrameLayout>

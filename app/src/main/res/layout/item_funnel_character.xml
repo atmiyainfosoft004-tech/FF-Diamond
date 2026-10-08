@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pick_row"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_164sdp"
+    android:background="@drawable/selector_option_card"
+    android:clickable="true"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/pick_icon"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_124sdp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginStart="@dimen/_minus6sdp"
+        android:layout_marginTop="@dimen/_minus16sdp"
+        android:layout_marginEnd="@dimen/_minus6sdp"
+        android:layout_marginBottom="@dimen/_32sdp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        android:outlineProvider="none"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/pick_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:duplicateParentState="false"
+        android:elevation="@dimen/_8sdp"
+        android:ellipsize="marquee"
+        android:fadingEdgeLength="@dimen/_8sdp"
+        android:focusable="false"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:outlineProvider="none"
+        android:requiresFadingEdge="horizontal"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Ff.Option" />
+</FrameLayout>

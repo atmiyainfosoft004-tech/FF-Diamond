@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clSlide"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_intro_hero">
+
+        <ImageView
+            android:id="@+id/imgIllustration"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_14sdp"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/img_intro_1" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Ff.OnboardTitle"
+        tools:text="Explore Characters Easily" />
+
+    <TextView
+        android:id="@+id/txtSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:gravity="center"
+        android:minLines="2"
+        android:textAppearance="@style/TextAppearance.Ff.OnboardBody"
+        tools:text="Browse characters with clear visuals and quick navigation." />
+
+</LinearLayout>

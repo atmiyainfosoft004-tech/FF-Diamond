@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Values mirror design/design-tokens.json. The JSON wins on any disagreement. -->
+
+    <!-- Roles -->
+    <color name="on_light">#1B1B1B</color>
+    <color name="on_dark">#FFFFFF</color>
+    <color name="label_on_wallpaper">#FFFFFF</color>
+    <color name="hint_text">#8CFFFFFF</color>
+
+    <!-- Surfaces over the wallpaper -->
+    <color name="card_fill">#1FFFFFFF</color>
+    <color name="card_stroke">#1AFFFFFF</color>
+    <color name="chip_fill">#1AFFFFFF</color>
+    <color name="search_chip_fill">#66FFFFFF</color>
+    <color name="search_chip_stroke">#99FFFFFF</color>
+    <color name="pill_light">#E6E1DE</color>
+
+    <!-- Page indicator -->
+    <color name="page_dot_active">#FFFFFF</color>
+    <color name="page_dot_inactive">#66FFFFFF</color>
+
+    <!-- Accents -->
+    <color name="search_match">#7BA7FF</color>
+    <color name="accent">#7BA7FF</color>
+    <color name="accent_pressed">#5F8FEE</color>
+    <color name="status_granted">#7BE0A8</color>
+    <color name="status_pending">#F2C463</color>
+
+    <!-- Onboarding backdrop -->
+    <color name="onboarding_top">#0D1017</color>
+    <color name="onboarding_bottom">#161C29</color>
+
+    <!-- Drag and drop -->
+    <color name="drop_bar_fill">#66000000</color>
+    <color name="drop_bar_fill_active">#B3E05A5A</color>
+
+    <!-- Folder -->
+    <color name="folder_scrim">#59000000</color>
+    <color name="folder_panel_fill">#3D2A2A2E</color>
+
+    <!-- Drawer and search -->
+    <color name="drawer_scrim">#0FFFFFFF</color>
+    <color name="search_pill_fill">#B8FFFFFF</color>
+    <color name="search_widget_fill">#FFFFFFFF</color>
+    <color name="search_pill_text">#4A4A4A</color>
+    <color name="search_field_fill">#B3FFFFFF</color>
+    <color name="search_field_fill_active">#C7FFFFFF</color>
+    <color name="web_search_fill">#1FFFFFFF</color>
+    <color name="popup_fill">#F22A2A2E</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="feed_surface">#FFF1EFEF</color>
+    <color name="feed_meta">#8A1B1B1B</color>
+    <color name="feed_image_fill">#E4DFDC</color>
+    <color name="feed_card_stroke">#14000000</color>
+    <color name="feed_chip_fill">#FF2C6BED</color>
+
+    <!-- Video-downloader funnel (light screens) -->
+    <color name="funnel_red">#EE1D23</color>
+    <color name="funnel_red_dark">#C4161C</color>
+    <color name="funnel_bg">#FFFFFFFF</color>
+    <color name="funnel_text">#FF111111</color>
+    <color name="funnel_muted">#FF8A8A8A</color>
+    <color name="funnel_line">#FFE6E6E6</color>
+    <color name="funnel_card">#FFFFFFFF</color>
+    <color name="funnel_surface">#FFF4F4F4</color>
+    <color name="funnel_ad">#FFE8E8E8</color>
+    <color name="funnel_pink_glow">#33EE1D23</color>
+    <color name="funnel_check_off">#FFD0D0D0</color>
+
+    <!-- FF Diamond palette -->
+    <color name="ff_gradient_start">#2B2FE3</color>
+    <color name="ff_gradient_end">#3F4BFF</color>
+    <color name="ff_accent">#2B2FE3</color>
+    <color name="ff_accent_light">#5B66FF</color>
+    <color name="ff_text_muted">#B4B4BC</color>
+    <color name="ff_card_fill">#232326</color>
+    <color name="ff_card_stroke">#3A3A40</color>
+    <color name="ff_card_navy">#11113E</color>
+    <color name="ff_card_navy_selected">#1B1F7A</color>
+    <color name="ff_card_outline">#F2FFFFFF</color>
+    <color name="ff_glow">#332B2FE3</color>
+    <color name="ff_phone_fill">#232326</color>
+    <color name="ff_phone_screen">#0A0A0C</color>
+    <color name="ff_system_bar">#0A0A0C</color>
+    <color name="ff_screen_top">#14141A</color>
+    <color name="ff_click_pill">#5B66FF</color>
+    <color name="ff_ad_badge">#FFFFFF</color>
+    <color name="ff_dialog_scrim">#CC000000</color>
+    <color name="ff_input_fill">#3A3A3F</color>
+    <color name="ff_input_stroke">#5C5C63</color>
+    <color name="ff_lang_card">#E4E4E8</color>
+    <color name="ff_lang_card_selected">#FFFFFF</color>
+    <color name="ff_lang_title">#141414</color>
+    <color name="ff_lang_sub">#86868C</color>
+    <color name="ff_diamond_light">#8FE9FF</color>
+    <color name="ff_diamond_mid">#33C8FF</color>
+    <color name="ff_diamond_dark">#1F6BFF</color>
+    <color name="ff_gold">#FFC83D</color>
+    <color name="ff_placeholder">#E6FFFFFF</color>
+</resources>

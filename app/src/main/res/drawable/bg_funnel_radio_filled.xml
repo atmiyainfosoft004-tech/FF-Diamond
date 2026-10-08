@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/white" />
+            <stroke
+                android:width="@dimen/_2sdp"
+                android:color="@color/ff_gradient_start" />
+            <size
+                android:width="@dimen/_22sdp"
+                android:height="@dimen/_22sdp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/_5sdp"
+        android:left="@dimen/_5sdp"
+        android:right="@dimen/_5sdp"
+        android:top="@dimen/_5sdp">
+        <shape android:shape="oval">
+            <solid android:color="@color/ff_gradient_start" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llTipCard"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_52sdp"
+    android:layout_marginHorizontal="@dimen/_6sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:background="@drawable/bg_gallery_card"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/_12sdp">
+
+    <ImageView
+        android:id="@+id/imgTipIcon"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_tip_icon" />
+
+    <TextView
+        android:id="@+id/txtTipTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:fontFamily="sans-serif"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        tools:text="Land in High-Loot Areas" />
+</LinearLayout>

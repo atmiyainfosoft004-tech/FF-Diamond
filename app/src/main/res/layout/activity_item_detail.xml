@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llDetailRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_screen"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingBottom="@dimen/_8sdp">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/view_screen_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Centred on the hero card: page top margin (_12sdp) + half card (_96sdp) - half button (_19sdp). -->
+        <ImageView
+            android:id="@+id/btnPrevious"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_gravity="start|top"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_89sdp"
+            android:background="@drawable/bg_nav_circle"
+            android:contentDescription="@string/ff_previous"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_chevron_left" />
+
+        <ImageView
+            android:id="@+id/btnNextItem"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_gravity="end|top"
+            android:layout_marginTop="@dimen/_89sdp"
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:background="@drawable/bg_nav_circle"
+            android:contentDescription="@string/ff_next_item"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_chevron_right" />
+    </FrameLayout>
+
+    <include
+        android:id="@+id/adNative"
+        layout="@layout/view_ad_slot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_6sdp" />
+</LinearLayout>

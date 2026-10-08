@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llHomeClockRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingEnd="@dimen/_16sdp">
+
+    <TextClock
+        android:id="@+id/txtHomeClockTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:format12Hour="h:mm"
+        android:format24Hour="HH:mm"
+        android:includeFontPadding="false"
+        android:shadowColor="#8C000000"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="8"
+        android:textColor="@color/on_dark"
+        android:textSize="@dimen/_36ssp" />
+
+    <TextClock
+        android:id="@+id/txtHomeClockDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:format12Hour="EEEE, d MMM"
+        android:format24Hour="EEEE, d MMM"
+        android:includeFontPadding="false"
+        android:shadowColor="#8C000000"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="4"
+        android:textColor="@color/hint_text"
+        android:textSize="@dimen/_11ssp" />
+</LinearLayout>

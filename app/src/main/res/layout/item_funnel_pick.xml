@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pick_row"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_52sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@drawable/selector_option_card">
+
+    <TextView
+        android:id="@+id/pick_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        android:duplicateParentState="false"
+        android:ellipsize="marquee"
+        android:focusable="false"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Ff.Option" />
+
+    <View
+        android:id="@+id/pick_icon_bg"
+        android:layout_width="@dimen/_1sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/pick_icon_letter"
+        android:layout_width="@dimen/_1sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/pick_icon"
+        android:layout_width="@dimen/_1sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:contentDescription="@null"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/pick_radio"
+        android:layout_width="@dimen/_1sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:visibility="gone" />
+</FrameLayout>

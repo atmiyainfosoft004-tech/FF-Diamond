@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Image aliases for all game artwork. Every entry points at a built-in illustration.
+      To use real artwork for one entry (for example ff_char_alok):
+        1. Put ff_char_alok.webp (or .png) in res/drawable-nodpi/
+        2. Delete the matching <item> line below.
+      No Kotlin or layout change is needed.
+    -->
+
+    <!-- Home tiles -->
+    <item name="img_home_characters" type="drawable">@drawable/art_ff_character_duo</item>
+    <item name="img_home_pets" type="drawable">@drawable/art_ff_pet_1</item>
+    <item name="img_home_bundles" type="drawable">@drawable/art_ff_bundle_1</item>
+    <item name="img_home_weapons" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="img_home_vehicles" type="drawable">@drawable/art_ff_vehicle_1</item>
+    <item name="img_home_emotes" type="drawable">@drawable/art_ff_emote_3</item>
+    <item name="img_home_calculator" type="drawable">@drawable/ic_ff_calculator</item>
+    <item name="img_home_parachutes" type="drawable">@drawable/art_ff_parachute_1</item>
+    <item name="img_home_tips" type="drawable">@drawable/art_ff_tip</item>
+    <item name="img_home_play_game" type="drawable">@drawable/ic_ff_diamond_logo</item>
+
+    <!-- Onboarding illustrations (4 slides) -->
+    <item name="img_intro_1" type="drawable">@drawable/art_ff_character_trio</item>
+    <item name="img_intro_2" type="drawable">@drawable/art_ff_intro_skills</item>
+    <item name="img_intro_3" type="drawable">@drawable/art_ff_intro_items</item>
+    <item name="img_intro_4" type="drawable">@drawable/ic_ff_calculator</item>
+
+    <!-- Funnel: game modes and start screen -->
+    <item name="img_mode_battle_royale" type="drawable">@drawable/art_ff_parachute_2</item>
+    <item name="img_mode_clash_squad" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="img_mode_lone_wolf" type="drawable">@drawable/art_ff_character_5</item>
+    <item name="img_mode_craftland" type="drawable">@drawable/art_ff_vehicle_2</item>
+    <item name="img_start_hero" type="drawable">@drawable/art_ff_character_trio</item>
+
+    <!-- Tips & Tricks list icon -->
+    <item name="img_tip_icon" type="drawable">@drawable/art_ff_tip</item>
+
+    <!-- char -->
+    <item name="ff_char_alok" type="drawable">@drawable/art_ff_character_1</item>
+    <item name="ff_char_chrono" type="drawable">@drawable/art_ff_character_2</item>
+    <item name="ff_char_captain_booyah" type="drawable">@drawable/art_ff_character_3</item>
+    <item name="ff_char_skyler" type="drawable">@drawable/art_ff_character_4</item>
+    <item name="ff_char_dimitri" type="drawable">@drawable/art_ff_character_5</item>
+    <item name="ff_char_a124" type="drawable">@drawable/art_ff_character_1</item>
+    <item name="ff_char_xayne" type="drawable">@drawable/art_ff_character_2</item>
+    <item name="ff_char_wukong" type="drawable">@drawable/art_ff_character_3</item>
+    <item name="ff_char_homer" type="drawable">@drawable/art_ff_character_4</item>
+    <item name="ff_char_moco" type="drawable">@drawable/art_ff_character_5</item>
+    <item name="ff_char_kelly" type="drawable">@drawable/art_ff_character_1</item>
+    <item name="ff_char_hayato" type="drawable">@drawable/art_ff_character_2</item>
+    <item name="ff_char_laura" type="drawable">@drawable/art_ff_character_3</item>
+    <item name="ff_char_rafael" type="drawable">@drawable/art_ff_character_4</item>
+    <item name="ff_char_nikita" type="drawable">@drawable/art_ff_character_5</item>
+
+    <!-- pet -->
+    <item name="ff_pet_falco" type="drawable">@drawable/art_ff_pet_1</item>
+    <item name="ff_pet_detective_panda" type="drawable">@drawable/art_ff_pet_2</item>
+    <item name="ff_pet_ottero" type="drawable">@drawable/art_ff_pet_3</item>
+    <item name="ff_pet_beaston" type="drawable">@drawable/art_ff_pet_1</item>
+    <item name="ff_pet_rockie" type="drawable">@drawable/art_ff_pet_2</item>
+    <item name="ff_pet_mr_waggor" type="drawable">@drawable/art_ff_pet_3</item>
+    <item name="ff_pet_spirit_fox" type="drawable">@drawable/art_ff_pet_1</item>
+    <item name="ff_pet_dreki" type="drawable">@drawable/art_ff_pet_2</item>
+    <item name="ff_pet_flash" type="drawable">@drawable/art_ff_pet_3</item>
+    <item name="ff_pet_agent_hop" type="drawable">@drawable/art_ff_pet_1</item>
+    <item name="ff_pet_dr_beanie" type="drawable">@drawable/art_ff_pet_2</item>
+    <item name="ff_pet_shiba" type="drawable">@drawable/art_ff_pet_3</item>
+    <item name="ff_pet_moony" type="drawable">@drawable/art_ff_pet_1</item>
+    <item name="ff_pet_finn" type="drawable">@drawable/art_ff_pet_2</item>
+    <item name="ff_pet_zasil" type="drawable">@drawable/art_ff_pet_3</item>
+
+    <!-- bundle -->
+    <item name="ff_bundle_hip_hop" type="drawable">@drawable/art_ff_bundle_1</item>
+    <item name="ff_bundle_red_criminal" type="drawable">@drawable/art_ff_bundle_2</item>
+    <item name="ff_bundle_green_criminal" type="drawable">@drawable/art_ff_bundle_3</item>
+    <item name="ff_bundle_pajamas" type="drawable">@drawable/art_ff_bundle_4</item>
+    <item name="ff_bundle_airspeed" type="drawable">@drawable/art_ff_bundle_5</item>
+    <item name="ff_bundle_rapper" type="drawable">@drawable/art_ff_bundle_1</item>
+    <item name="ff_bundle_lush_clubber" type="drawable">@drawable/art_ff_bundle_2</item>
+    <item name="ff_bundle_cobra_rage" type="drawable">@drawable/art_ff_bundle_3</item>
+    <item name="ff_bundle_mood_booster" type="drawable">@drawable/art_ff_bundle_4</item>
+    <item name="ff_bundle_enharmonic_treble" type="drawable">@drawable/art_ff_bundle_5</item>
+    <item name="ff_bundle_imperial_maiden" type="drawable">@drawable/art_ff_bundle_1</item>
+    <item name="ff_bundle_shadow_serpent" type="drawable">@drawable/art_ff_bundle_2</item>
+    <item name="ff_bundle_valiant_shadow" type="drawable">@drawable/art_ff_bundle_3</item>
+
+    <!-- weapon -->
+    <item name="ff_weapon_m1014" type="drawable">@drawable/art_ff_weapon_2</item>
+    <item name="ff_weapon_mp40" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="ff_weapon_ak" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="ff_weapon_scar" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="ff_weapon_m1887" type="drawable">@drawable/art_ff_weapon_2</item>
+    <item name="ff_weapon_groza" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="ff_weapon_awm" type="drawable">@drawable/art_ff_weapon_3</item>
+    <item name="ff_weapon_m60" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="ff_weapon_ump" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="ff_weapon_vector" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="ff_weapon_famas" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="ff_weapon_m82b" type="drawable">@drawable/art_ff_weapon_3</item>
+    <item name="ff_weapon_spas12" type="drawable">@drawable/art_ff_weapon_2</item>
+    <item name="ff_weapon_g36" type="drawable">@drawable/art_ff_weapon_1</item>
+    <item name="ff_weapon_katana" type="drawable">@drawable/art_ff_weapon_katana</item>
+
+    <!-- vehicle -->
+    <item name="ff_vehicle_sports_car" type="drawable">@drawable/art_ff_vehicle_1</item>
+    <item name="ff_vehicle_jeep" type="drawable">@drawable/art_ff_vehicle_2</item>
+    <item name="ff_vehicle_pickup_truck" type="drawable">@drawable/art_ff_vehicle_2</item>
+    <item name="ff_vehicle_motorcycle" type="drawable">@drawable/art_ff_vehicle_3</item>
+    <item name="ff_vehicle_amphibious_car" type="drawable">@drawable/art_ff_vehicle_2</item>
+    <item name="ff_vehicle_tuk_tuk" type="drawable">@drawable/art_ff_vehicle_2</item>
+    <item name="ff_vehicle_monster_truck" type="drawable">@drawable/art_ff_vehicle_2</item>
+
+    <!-- emote -->
+    <item name="ff_emote_1" type="drawable">@drawable/art_ff_emote_1</item>
+    <item name="ff_emote_2" type="drawable">@drawable/art_ff_emote_2</item>
+    <item name="ff_emote_3" type="drawable">@drawable/art_ff_emote_3</item>
+    <item name="ff_emote_4" type="drawable">@drawable/art_ff_emote_4</item>
+    <item name="ff_emote_5" type="drawable">@drawable/art_ff_emote_1</item>
+    <item name="ff_emote_6" type="drawable">@drawable/art_ff_emote_2</item>
+    <item name="ff_emote_7" type="drawable">@drawable/art_ff_emote_3</item>
+    <item name="ff_emote_8" type="drawable">@drawable/art_ff_emote_4</item>
+    <item name="ff_emote_9" type="drawable">@drawable/art_ff_emote_1</item>
+    <item name="ff_emote_10" type="drawable">@drawable/art_ff_emote_2</item>
+    <item name="ff_emote_11" type="drawable">@drawable/art_ff_emote_3</item>
+    <item name="ff_emote_12" type="drawable">@drawable/art_ff_emote_4</item>
+    <item name="ff_emote_13" type="drawable">@drawable/art_ff_emote_1</item>
+    <item name="ff_emote_14" type="drawable">@drawable/art_ff_emote_2</item>
+    <item name="ff_emote_15" type="drawable">@drawable/art_ff_emote_3</item>
+    <item name="ff_emote_16" type="drawable">@drawable/art_ff_emote_4</item>
+
+    <!-- parachute -->
+    <item name="ff_parachute_classic" type="drawable">@drawable/art_ff_parachute_1</item>
+    <item name="ff_parachute_dragon" type="drawable">@drawable/art_ff_parachute_2</item>
+    <item name="ff_parachute_rainbow" type="drawable">@drawable/art_ff_parachute_3</item>
+    <item name="ff_parachute_booyah" type="drawable">@drawable/art_ff_parachute_4</item>
+    <item name="ff_parachute_cobra" type="drawable">@drawable/art_ff_parachute_5</item>
+    <item name="ff_parachute_sakura" type="drawable">@drawable/art_ff_parachute_1</item>
+    <item name="ff_parachute_galaxy" type="drawable">@drawable/art_ff_parachute_2</item>
+    <item name="ff_parachute_tiger" type="drawable">@drawable/art_ff_parachute_3</item>
+</resources>
