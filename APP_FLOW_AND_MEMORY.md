@@ -70,7 +70,7 @@ graph TD
 - `ItemDetailActivity`: ViewPager2 — swipe left/right or prev/next arrows (arrows wrap around, no ad), headline/summary/description card, native ad at bottom.
 - `TipDetailActivity`: Tips & Tricks entry — marquee uppercase title in header, single text card, native ad at bottom. Tips list = icon + title rows (15 tips).
 - `DiamondCalculatorActivity`: "Count now" → `AdsGate.onInterOrWeb` → shows USD cost (100 diamonds = 0.99 USD). Banner ad.
-- Content lives in `FfRepository.kt`. Artwork is aliased in `res/values/ff_images.xml` (built-in coloured illustrations `art_ff_*` until real art is added: put `<name>.webp` in `res/drawable-nodpi/` and delete the alias line).
+- Content lives in `FfRepository.kt`. Artwork is aliased in `res/values/ff_images.xml` (one dedicated built-in illustration per item, `ffart_*`, until real art is added: put `<name>.webp` in `res/drawable-nodpi/` and delete the alias line).
 
 ---
 
@@ -268,3 +268,4 @@ graph TD
   - (User-requested ads change) Home swipe web ad (`AdsGate.onHomeSwipe`) now opens `web_ads_count` Custom Tabs together, same as the funnel Next burst (was hard-coded to 1). `home_swipe_count` still decides which swipe shows the ad (every Nth). Home/Recents restore web ad (`showWeb`) and afterDefault still open 1 tab.
   - Ad placement restored to RBXCalculator positions on all funnel screens (Intro, Language, Gender, Age/pick, Game Mode, feature/pick-grid screens): native `ad_native` at the top under the title (elevated FrameLayout), banner `ad_banner` fixed at the bottom. Set Default: banner only at the bottom (unchanged, same as RBX).
   - Settings gear, SettingsActivity and all its resources removed. Home Play Game tiles split (row 3 left, row 4 right).
+  - Every item (15 characters, 15 pets, 13 bundles, 15 weapons, 7 vehicles, 16 emotes, 8 parachutes) now has its own `ffart_*` drawing matching its name; no item shares art. Funnel picks, game modes, home tiles and intro use these too.
