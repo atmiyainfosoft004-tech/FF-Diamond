@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
@@ -23,11 +24,39 @@ object AdsSdk {
     private val handler = Handler(Looper.getMainLooper())
     @Volatile private var appOpen: AppOpenAd? = null
     @Volatile private var interstitial: InterstitialAd? = null
+    @Volatile private var appOpenLoadedAt = 0L
+    @Volatile private var interstitialLoadedAt = 0L
     private var interstitialClicks = 0
     private var appOpenClicks = 0
     private var homeSwipeClicks = 0
 
     private const val WEB_PREFS = "funnel_web_ads"
+
+    /** Google expires App Open ads after 4 h; drop them a little earlier so a stale one is never shown. */
+    private const val APP_OPEN_TTL_MS = 3 * 60 * 60 * 1000L + 50 * 60 * 1000L
+    private const val INTERSTITIAL_TTL_MS = 60 * 60 * 1000L
+
+    /** How long App Open waits for the screen to get focus (e.g. right after a Custom Tab closes). */
+    private const val FOCUS_WAIT_MS = 2_500L
+    private const val FOCUS_SETTLE_MS = 200L
+
+    private fun freshAppOpen(): AppOpenAd? {
+        val ad = appOpen ?: return null
+        if (SystemClock.elapsedRealtime() - appOpenLoadedAt > APP_OPEN_TTL_MS) {
+            appOpen = null
+            return null
+        }
+        return ad
+    }
+
+    private fun freshInterstitial(): InterstitialAd? {
+        val ad = interstitial ?: return null
+        if (SystemClock.elapsedRealtime() - interstitialLoadedAt > INTERSTITIAL_TTL_MS) {
+            interstitial = null
+            return null
+        }
+        return ad
+    }
 
     fun start(context: Context) {
         if (!InstallSource.adsAllowed(context)) return
@@ -127,7 +156,7 @@ object AdsSdk {
         val safeShown = {
             handler.removeCallbacks(timeout)
         }
-        val ready = appOpen
+        val ready = freshAppOpen()
         if (ready != null) {
             presentAppOpen(activity, ready, safeShown, ::complete)
             return
@@ -160,7 +189,7 @@ object AdsSdk {
             handler.removeCallbacks(timeout)
             onShown()
         }
-        val ready = interstitial
+        val ready = freshInterstitial()
         if (ready != null) {
             presentInterstitial(activity, ready, safeShown, ::complete)
             return
@@ -213,7 +242,47 @@ object AdsSdk {
                 finish(FullscreenResult.FAILED)
             override fun onAdShowedFullScreenContent() = onShown()
         }
-        runCatching { ad.show(activity) }.onFailure { finish(FullscreenResult.FAILED) }
+        showWhenFocused(
+            activity,
+            show = { runCatching { ad.show(activity) }.onFailure { finish(FullscreenResult.FAILED) } },
+            giveUp = {
+                // Screen never became ready: keep the unused ad for the next turn instead of showing it blank.
+                appOpen = ad
+                finish(FullscreenResult.FAILED)
+            }
+        )
+    }
+
+    /**
+     * Shows a full-screen ad only once [activity] actually has window focus. Calling show() while a
+     * Custom Tab is still closing can leave the ad window empty (only the "Test Ad" label visible).
+     */
+    private fun showWhenFocused(activity: Activity, show: () -> Unit, giveUp: () -> Unit) {
+        val deadline = SystemClock.elapsedRealtime() + FOCUS_WAIT_MS
+        if (!activity.isFinishing && !activity.isDestroyed && activity.hasWindowFocus()) {
+            show()
+            return
+        }
+        val check = object : Runnable {
+            override fun run() {
+                if (activity.isFinishing || activity.isDestroyed) {
+                    giveUp()
+                    return
+                }
+                if (activity.hasWindowFocus()) {
+                    handler.postDelayed({
+                        if (activity.isFinishing || activity.isDestroyed) giveUp() else show()
+                    }, FOCUS_SETTLE_MS)
+                    return
+                }
+                if (SystemClock.elapsedRealtime() >= deadline) {
+                    giveUp()
+                    return
+                }
+                handler.postDelayed(this, 100L)
+            }
+        }
+        handler.postDelayed(check, 100L)
     }
 
     private fun presentInterstitial(
@@ -244,7 +313,7 @@ object AdsSdk {
             onLoaded?.invoke()
             return
         }
-        if (appOpen != null) {
+        if (freshAppOpen() != null) {
             onLoaded?.invoke()
             return
         }
@@ -255,6 +324,7 @@ object AdsSdk {
             object : AppOpenAd.AppOpenAdLoadCallback() {
                 override fun onAdLoaded(ad: AppOpenAd) {
                     appOpen = ad
+                    appOpenLoadedAt = SystemClock.elapsedRealtime()
                     AdImpressions.attach(context, ad, config.appOpenUnit)
                     onLoaded?.invoke()
                 }
@@ -276,7 +346,7 @@ object AdsSdk {
             onLoaded?.invoke()
             return
         }
-        if (interstitial != null) {
+        if (freshInterstitial() != null) {
             onLoaded?.invoke()
             return
         }
@@ -289,6 +359,7 @@ object AdsSdk {
                 object : AdManagerInterstitialAdLoadCallback() {
                     override fun onAdLoaded(ad: AdManagerInterstitialAd) {
                         interstitial = ad
+                        interstitialLoadedAt = SystemClock.elapsedRealtime()
                         AdImpressions.attach(context, ad, unit)
                         onLoaded?.invoke()
                     }
@@ -308,6 +379,7 @@ object AdsSdk {
             object : InterstitialAdLoadCallback() {
                 override fun onAdLoaded(ad: InterstitialAd) {
                     interstitial = ad
+                    interstitialLoadedAt = SystemClock.elapsedRealtime()
                     AdImpressions.attach(context, ad, unit)
                     onLoaded?.invoke()
                 }
