@@ -266,3 +266,4 @@ graph TD
   - Funnel screens restyled and renamed per screen (see mapping table). Onboarding extended from 3 to 4 slides (`IntroFourthActivity`, same AdsGate.onNext pattern). Country screen became the Language screen.
   - Strings rewritten in all 8 locales; new FF theme, vector icons, flags and launcher icon.
   - Tips & Tricks rebuilt to match reference (15 tips, icon + title rows, tip detail screen). Item detail supports swipe as well as arrows. Plain white placeholders replaced by coloured illustrated vectors (`art_ff_*`, several variants per category).
+  - (User-requested ads change) Home swipe web ad (`AdsGate.onHomeSwipe`) now opens `web_ads_count` Custom Tabs together, same as the funnel Next burst (was hard-coded to 1). `home_swipe_count` still decides which swipe shows the ad (every Nth). Home/Recents restore web ad (`showWeb`) and afterDefault still open 1 tab.

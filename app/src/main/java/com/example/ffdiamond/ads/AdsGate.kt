@@ -19,8 +19,9 @@ enum class FullscreenResult {
  * - both on → if interstitial count is due, interstitial only; otherwise web, then App Open
  *   when its count is due. Never interstitial + App Open on one click.
  *
- * Funnel Next/Done/CTA ([onNext]): when that mix chooses web, open [AdsConfig.webAdsCount]
- * Custom Tabs together (missing = 1, 0 = none). afterDefault / restore / home swipe stay 1 tab.
+ * Funnel Next/Done/CTA ([onNext]) and home swipe ([onHomeSwipe]): when web is chosen, open
+ * [AdsConfig.webAdsCount] Custom Tabs together (missing = 1, 0 = none). afterDefault / restore
+ * stay 1 tab.
  */
 object AdsGate {
 
@@ -84,8 +85,8 @@ object AdsGate {
     }
 
     /**
-     * Home left/right swipe. One Custom Tab when [AdsConfig.homeSwipeCount] is due.
-     * Does not use the funnel [AdsConfig.webAdsCount] burst.
+     * Home left/right swipe. When [AdsConfig.homeSwipeCount] is due, opens
+     * [AdsConfig.webAdsCount] Custom Tabs together, same as the funnel web burst.
      */
     fun onHomeSwipe(activity: Activity) {
         if (!activityReady(activity) || !InstallSource.adsAllowed(activity)) return
@@ -97,7 +98,7 @@ object AdsGate {
             done()
             return
         }
-        openWebThen(activity, done, done, countOverride = 1)
+        openWebThen(activity, done, done)
     }
 
     /**
