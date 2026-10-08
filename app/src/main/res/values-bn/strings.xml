@@ -121,14 +121,10 @@
     <string name="ff_tips_tricks">টিপস ও ট্রিকস</string>
     <string name="ff_play_game">গেম খেলুন</string>
     <string name="ff_back">ফিরে যান</string>
-    <string name="ff_settings">সেটিংস</string>
     <string name="ff_description_label">বিবরণ:</string>
     <string name="ff_calc_label">ডায়মন্ডের সংখ্যা</string>
     <string name="ff_calc_hint">ডায়মন্ড লিখুন</string>
     <string name="ff_count_now">এখন গণনা করুন</string>
     <string name="ff_calc_cost_label">এত ডায়মন্ড কিনতে খরচ হবে:</string>
     <string name="ff_calc_error">সঠিক সংখ্যক ডায়মন্ড লিখুন</string>
-    <string name="ff_settings_share">অ্যাপ শেয়ার করুন</string>
-    <string name="ff_settings_rate">আমাদের রেট দিন</string>
-    <string name="ff_settings_notifications">নোটিফিকেশন</string>
 </resources>

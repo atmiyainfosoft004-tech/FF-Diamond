@@ -102,7 +102,6 @@ class DiamondHomeFragment : Fragment() {
         bindTile(binding.tileTips, R.drawable.img_home_tips, R.string.ff_tips_tricks) {
             openGallery(TipsTricksActivity::class.java)
         }
-        binding.btnSettings.setOnSafeClickListener { openSettings() }
 
         checkNotificationPermissionOnEntry()
     }
@@ -216,11 +215,6 @@ class DiamondHomeFragment : Fragment() {
             }
             requireActivity().startActivityWithSlide(Intent(requireContext(), screen))
         }
-    }
-
-    private fun openSettings() {
-        if (!isAdded || isNavigating) return
-        requireActivity().startActivityWithSlide(Intent(requireContext(), SettingsActivity::class.java))
     }
 
     private fun playGame() {

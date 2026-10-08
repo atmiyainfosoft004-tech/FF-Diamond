@@ -190,19 +190,6 @@
         <item name="android:lineSpacingExtra">@dimen/_1sdp</item>
     </style>
 
-    <style name="Widget.Ff.SettingsRow">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/_50sdp</item>
-        <item name="android:layout_marginBottom">@dimen/_10sdp</item>
-        <item name="android:background">@drawable/bg_home_tile</item>
-        <item name="android:drawablePadding">@dimen/_14sdp</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:paddingHorizontal">@dimen/_16sdp</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/_14ssp</item>
-    </style>
-
     <style name="TextAppearance.Ff.DetailBody" parent="android:TextAppearance">
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">@dimen/_14ssp</item>

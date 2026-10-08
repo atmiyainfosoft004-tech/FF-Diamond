@@ -121,14 +121,10 @@
     <string name="ff_tips_tricks">ટિપ્સ અને ટ્રિક્સ</string>
     <string name="ff_play_game">ગેમ રમો</string>
     <string name="ff_back">પાછા</string>
-    <string name="ff_settings">સેટિંગ્સ</string>
     <string name="ff_description_label">વર્ણન:</string>
     <string name="ff_calc_label">ડાયમંડની સંખ્યા</string>
     <string name="ff_calc_hint">ડાયમંડ દાખલ કરો</string>
     <string name="ff_count_now">હમણાં ગણો</string>
     <string name="ff_calc_cost_label">આટલા ડાયમંડ ખરીદવાની કિંમત થશે:</string>
     <string name="ff_calc_error">ડાયમંડની સાચી સંખ્યા દાખલ કરો</string>
-    <string name="ff_settings_share">એપ શેર કરો</string>
-    <string name="ff_settings_rate">અમને રેટ કરો</string>
-    <string name="ff_settings_notifications">નોટિફિકેશન</string>
 </resources>

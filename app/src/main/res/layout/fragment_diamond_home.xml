@@ -24,15 +24,6 @@
             android:layout_weight="1"
             android:text="@string/ff_home_title"
             android:textAppearance="@style/TextAppearance.Ff.HomeTitle" />
-
-        <ImageView
-            android:id="@+id/btnSettings"
-            android:layout_width="@dimen/_36sdp"
-            android:layout_height="@dimen/_36sdp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/ff_settings"
-            android:padding="@dimen/_6sdp"
-            android:src="@drawable/ic_settings_gear" />
     </LinearLayout>
 
     <ScrollView
@@ -138,14 +129,6 @@
                     android:layout_margin="@dimen/_6sdp" />
 
                 <include
-                    android:id="@+id/tilePlay2"
-                    layout="@layout/item_home_tile"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_112sdp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="@dimen/_6sdp" />
-
-                <include
                     android:id="@+id/tileEmotes"
                     layout="@layout/item_home_tile"
                     android:layout_width="0dp"
@@ -155,6 +138,14 @@
 
                 <include
                     android:id="@+id/tileCalculator"
+                    layout="@layout/item_home_tile"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_112sdp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="@dimen/_6sdp" />
+
+                <include
+                    android:id="@+id/tilePlay2"
                     layout="@layout/item_home_tile"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_112sdp"

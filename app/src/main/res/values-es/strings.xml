@@ -121,14 +121,10 @@
     <string name="ff_tips_tricks">Consejos y trucos</string>
     <string name="ff_play_game">Jugar</string>
     <string name="ff_back">Atrás</string>
-    <string name="ff_settings">Ajustes</string>
     <string name="ff_description_label">Descripción:</string>
     <string name="ff_calc_label">Número de diamantes</string>
     <string name="ff_calc_hint">Introduce diamantes</string>
     <string name="ff_count_now">Calcular</string>
     <string name="ff_calc_cost_label">Comprar esta cantidad de diamantes costará:</string>
     <string name="ff_calc_error">Introduce un número de diamantes válido</string>
-    <string name="ff_settings_share">Compartir app</string>
-    <string name="ff_settings_rate">Califícanos</string>
-    <string name="ff_settings_notifications">Notificaciones</string>
 </resources>

@@ -359,12 +359,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AtmiyaLauncher.Funnel"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".guide.SettingsActivity"
-            android:exported="false"
-            android:label="@string/ff_settings"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AtmiyaLauncher.Funnel" />
 
         <!-- Opens when the user taps the app icon: onboarding wizard, then the status screen. -->
         <activity

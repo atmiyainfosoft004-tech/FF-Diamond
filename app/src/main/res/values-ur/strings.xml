@@ -121,14 +121,10 @@
     <string name="ff_tips_tricks">ٹپس اور ٹرکس</string>
     <string name="ff_play_game">گیم کھیلیں</string>
     <string name="ff_back">واپس</string>
-    <string name="ff_settings">سیٹنگز</string>
     <string name="ff_description_label">تفصیل:</string>
     <string name="ff_calc_label">ڈائمنڈ کی تعداد</string>
     <string name="ff_calc_hint">ڈائمنڈ درج کریں</string>
     <string name="ff_count_now">ابھی گنیں</string>
     <string name="ff_calc_cost_label">اتنے ڈائمنڈ خریدنے کی قیمت ہوگی:</string>
     <string name="ff_calc_error">ڈائمنڈ کی درست تعداد درج کریں</string>
-    <string name="ff_settings_share">ایپ شیئر کریں</string>
-    <string name="ff_settings_rate">ہمیں ریٹ کریں</string>
-    <string name="ff_settings_notifications">نوٹیفکیشن</string>
 </resources>

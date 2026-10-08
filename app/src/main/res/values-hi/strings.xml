@@ -124,14 +124,10 @@
     <string name="ff_tips_tricks">टिप्स और ट्रिक्स</string>
     <string name="ff_play_game">गेम खेलें</string>
     <string name="ff_back">वापस</string>
-    <string name="ff_settings">सेटिंग</string>
     <string name="ff_description_label">विवरण:</string>
     <string name="ff_calc_label">डायमंड की संख्या</string>
     <string name="ff_calc_hint">डायमंड दर्ज करें</string>
     <string name="ff_count_now">अभी गिनें</string>
     <string name="ff_calc_cost_label">इतने डायमंड खरीदने की कीमत होगी:</string>
     <string name="ff_calc_error">डायमंड की सही संख्या दर्ज करें</string>
-    <string name="ff_settings_share">ऐप शेयर करें</string>
-    <string name="ff_settings_rate">हमें रेट करें</string>
-    <string name="ff_settings_notifications">नोटिफिकेशन</string>
 </resources>

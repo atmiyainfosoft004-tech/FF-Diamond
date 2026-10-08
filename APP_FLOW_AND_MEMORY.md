@@ -65,12 +65,11 @@ graph TD
 | START_APP | GetStartedActivity | Start your FF Diamond journey |
 
 ### FF Diamond app screens (package `guide`)
-- `DiamondHomeFragment` (launcher page + `DiamondHomeActivity` for organic): tiles Characters, Pets, Bundles, Weapons, Vehicles, 2× Play Game (AD, `WebAds`), Emotes, Calculator, Parachutes, Tips & Tricks; native ad under Characters; settings gear. Every tile → `AdsGate.onInterOrWeb` → screen (same as the old RBX home). Notification rationale on entry (unchanged).
+- `DiamondHomeFragment` (launcher page + `DiamondHomeActivity` for organic): tiles Characters, then grid Pets, Bundles / Weapons, Vehicles / Play Game (AD), Emotes / Calculator, Play Game (AD) / Parachutes, Tips & Tricks (the two Play Game tiles are never side by side); native ad under Characters. No settings screen. Every tile → `AdsGate.onInterOrWeb` → screen (same as the old RBX home). Notification rationale on entry (unchanged).
 - Gallery screens (`GalleryScreens.kt`): CharactersActivity, PetsActivity, BundlesActivity, WeaponsActivity, VehiclesActivity, EmotesActivity, ParachutesActivity, TipsTricksActivity. Banner ad. Item tap → `AdsGate.onInterOrWeb` → `ItemDetailActivity`.
 - `ItemDetailActivity`: ViewPager2 — swipe left/right or prev/next arrows (arrows wrap around, no ad), headline/summary/description card, native ad at bottom.
 - `TipDetailActivity`: Tips & Tricks entry — marquee uppercase title in header, single text card, native ad at bottom. Tips list = icon + title rows (15 tips).
 - `DiamondCalculatorActivity`: "Count now" → `AdsGate.onInterOrWeb` → shows USD cost (100 diamonds = 0.99 USD). Banner ad.
-- `SettingsActivity` (gear, no fullscreen ad): notifications, share, rate, version, unofficial-fan-guide disclaimer. Banner ad.
 - Content lives in `FfRepository.kt`. Artwork is aliased in `res/values/ff_images.xml` (built-in coloured illustrations `art_ff_*` until real art is added: put `<name>.webp` in `res/drawable-nodpi/` and delete the alias line).
 
 ---
@@ -268,4 +267,4 @@ graph TD
   - Tips & Tricks rebuilt to match reference (15 tips, icon + title rows, tip detail screen). Item detail supports swipe as well as arrows. Plain white placeholders replaced by coloured illustrated vectors (`art_ff_*`, several variants per category).
   - (User-requested ads change) Home swipe web ad (`AdsGate.onHomeSwipe`) now opens `web_ads_count` Custom Tabs together, same as the funnel Next burst (was hard-coded to 1). `home_swipe_count` still decides which swipe shows the ad (every Nth). Home/Recents restore web ad (`showWeb`) and afterDefault still open 1 tab.
   - Ad placement restored to RBXCalculator positions on all funnel screens (Intro, Language, Gender, Age/pick, Game Mode, feature/pick-grid screens): native `ad_native` at the top under the title (elevated FrameLayout), banner `ad_banner` fixed at the bottom. Set Default: banner only at the bottom (unchanged, same as RBX).
-
+  - Settings gear, SettingsActivity and all its resources removed. Home Play Game tiles split (row 3 left, row 4 right).

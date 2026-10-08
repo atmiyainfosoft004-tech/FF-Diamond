@@ -121,14 +121,10 @@
     <string name="ff_tips_tricks">نصائح وحيل</string>
     <string name="ff_play_game">العب الآن</string>
     <string name="ff_back">رجوع</string>
-    <string name="ff_settings">الإعدادات</string>
     <string name="ff_description_label">الوصف:</string>
     <string name="ff_calc_label">عدد الجواهر</string>
     <string name="ff_calc_hint">أدخل الجواهر</string>
     <string name="ff_count_now">احسب الآن</string>
     <string name="ff_calc_cost_label">شراء هذا العدد من الجواهر سيكلف:</string>
     <string name="ff_calc_error">أدخل عددًا صحيحًا من الجواهر</string>
-    <string name="ff_settings_share">مشاركة التطبيق</string>
-    <string name="ff_settings_rate">قيّمنا</string>
-    <string name="ff_settings_notifications">الإشعارات</string>
 </resources>
