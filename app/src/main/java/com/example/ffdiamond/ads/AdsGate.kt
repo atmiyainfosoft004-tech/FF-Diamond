@@ -102,36 +102,12 @@ object AdsGate {
     }
 
     /**
-     * Counted interstitial on downloader / in-app buttons. No Custom Tabs after the launcher.
+     * In-app buttons (home tiles, list items, calculator). Same ad flow as funnel Next
+     * ([onNext]): interstitial / App Open when their counts are due, otherwise
+     * [AdsConfig.webAdsCount] Custom Tabs, with the same web fallback when Google fails.
      */
     fun onInterOrWeb(activity: Activity, proceed: () -> Unit) {
-        if (!activityReady(activity)) {
-            proceed()
-            return
-        }
-        val config = AdsRepository.config(activity)
-        if (!config.adsEnabled || !InstallSource.adsAllowed(activity)) {
-            proceed()
-            return
-        }
-        if (!acquireBusy()) {
-            proceed()
-            return
-        }
-        val done = wrap(proceed)
-        val interDue = config.interstitialEnabled &&
-            AdsSdk.consumeInterstitialTurn(config, respectCount = true)
-        if (interDue) {
-            showInterstitialThen(
-                activity,
-                respectCount = false,
-                alreadyCounted = true,
-                done,
-                webBurst = false
-            )
-        } else {
-            done()
-        }
+        onNext(activity, proceed)
     }
 
     /** Always open a web ad when web ads are on. Home / Recents restore uses this. */

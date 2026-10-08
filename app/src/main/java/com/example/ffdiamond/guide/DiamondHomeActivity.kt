@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ffdiamond.R
+import com.example.ffdiamond.ads.AdsGate
 import com.example.ffdiamond.databinding.ActivityDiamondHomeBinding
 import com.example.ffdiamond.funnel.AppLocale
 import com.example.ffdiamond.util.applyAppSlideTransitions
@@ -29,6 +30,17 @@ class DiamondHomeActivity : AppCompatActivity() {
                 .replace(binding.flDiamondHomeHost.id, DiamondHomeFragment())
                 .commit()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Lets a home-tile web ad (Custom Tab) finish and open its screen when the user comes back.
+        AdsGate.onResume(this)
+    }
+
+    override fun onDestroy() {
+        AdsGate.release(this)
+        super.onDestroy()
     }
 
     override fun finish() {

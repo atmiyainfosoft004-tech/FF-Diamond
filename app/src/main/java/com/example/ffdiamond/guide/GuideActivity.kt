@@ -62,6 +62,7 @@ abstract class GuideActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         isNavigating = false
+        AdsGate.release(this)
         AdsBinder.release(this)
         super.onDestroy()
     }
